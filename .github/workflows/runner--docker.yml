@@ -4,13 +4,8 @@ permissions:
   contents: read
 
 on:
-  push:
-    branches: [main]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
+  workflow_dispatch:
+    
 jobs:
   build-and-push-docker-image:
     name: Build and push docker image
